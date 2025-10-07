@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application android:allowBackup="true">
+        <activity
+            android:name="com.tourguide.Activity5"
+            android:exported="false" />
+        <activity
+            android:name="com.tourguide.Activity4"
+            android:exported="false" />
+        <activity
+            android:name="com.tourguide.activity5"
+            android:exported="false" />
+        <activity
+            android:name="com.tourguide.activity4"
+            android:exported="false" />
+        <activity android:name=".SelectPlaceActivity" />
+        <activity android:name=".SelectCountryActivity" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity4" />
+        <activity android:name=".Activity5" />
+    </application>
+
+</manifest>
