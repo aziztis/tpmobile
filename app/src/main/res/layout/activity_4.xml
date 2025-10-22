@@ -2,47 +2,112 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:background="#EEF2FF">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="Formulaire utilisateur"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <!-- RelativeLayout imbriqué -->
-    <RelativeLayout
-        android:id="@+id/formContainer"
-        android:layout_below="@id/tvTitle"
+    <!-- Conteneur principal -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/etName"
-            android:hint="Entrez votre nom"
+        <!-- Carte centrale -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="@drawable/card_background"
+            android:elevation="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Titre -->
+            <TextView
+                android:text="💰 Planificateur de budget"
+                android:textColor="#1E293B"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Ligne décorative -->
+            <View
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="#3B82F6"
+                android:layout_gravity="center" />
+
+            <!-- Montant -->
+            <EditText
+                android:id="@+id/etAmount"
+                android:hint="Montant (€)"
+                android:background="@drawable/input_field"
+                android:padding="14dp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Durée -->
+            <EditText
+                android:id="@+id/etDays"
+                android:hint="Durée du séjour (jours)"
+                android:background="@drawable/input_field"
+                android:padding="14dp"
+                android:textColor="#1E293B"
+                android:textColorHint="#94A3B8"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Sélecteur de pays -->
+            <Spinner
+                android:id="@+id/spCountry"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/input_field"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Bouton calculer -->
+            <Button
+                android:id="@+id/btnCalculate"
+                android:text="Calculer mon budget ✈️"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:background="@drawable/gradient_button"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Barre de chargement -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Résultat du calcul en bas -->
+        <TextView
+            android:id="@+id/tvSummary"
+            android:text="Résultat du calcul"
+            android:textSize="16sp"
+            android:textColor="#1E293B"
+            android:gravity="center"
+            android:background="@drawable/result_box"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <EditText
-            android:id="@+id/etCity"
-            android:hint="Entrez votre ville"
-            android:layout_below="@id/etName"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btnSend"
-            android:text="Envoyer"
-            android:layout_below="@id/etCity"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-
+    </LinearLayout>
 </RelativeLayout>

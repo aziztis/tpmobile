@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class WelcomeActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -13,13 +14,8 @@ public class WelcomeActivity extends Activity {
 
         Button btnStart = findViewById(R.id.btnStart);
         btnStart.setOnClickListener(v -> {
-            startActivity(new Intent(this, SelectCountryActivity.class));
-        });
-
-
-        Button btnForm = findViewById(R.id.btnForm);
-        btnForm.setOnClickListener(v -> {
-            startActivity(new Intent(this, Activity4.class));
+            Intent intent = new Intent(this, SelectCountryActivity.class);
+            startActivity(intent);
         });
     }
 }

@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA">
+    android:background="#F9FAFB">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:src="@drawable/ic_travel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp" />
 
     <TextView
-        android:text="🌍 Bienvenue dans TourGuide"
-        android:textSize="26sp"
+        android:id="@+id/tvTitle"
+        android:text="🌍 TourGuide"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp" />
+        android:textColor="#1E293B"
+        android:layout_below="@id/imgLogo"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
-        android:text="Explorez les pays et choisissez un lieu à découvrir."
+        android:id="@+id/tvSubtitle"
+        android:text="Explorez le monde autour de vous"
+        android:textColor="#64748B"
         android:textSize="16sp"
-        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp" />
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnStart"
-        android:text="Commencer"
-        android:layout_width="wrap_content"
+        android:text="Commencer l'exploration ✈️"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/gradient_button"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content" />
-</LinearLayout>
+
+</RelativeLayout>
